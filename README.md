@@ -35,7 +35,7 @@ This project focuses on clean UI, responsive design, and a structured codebase r
 - **Routing:** React Router DOM
 - **State Management:** React Context API
 - **Styling:** CSS
-- **API:** OMDb API / TMDb API
+- **API:** TMDb API
 - **Deployment:** Vercel
 - **Tooling:** npm, Git, GitHub
 
