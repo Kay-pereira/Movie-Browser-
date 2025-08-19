@@ -5,9 +5,6 @@ import './css/index.css'
 import App from './App.jsx'
 import { useRef, useEffect } from 'react';
 
-//Vercel tools
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/next';
 
 const setScriptRoute = useRef(false);
 
