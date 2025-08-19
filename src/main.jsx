@@ -7,7 +7,7 @@ import App from './App.jsx';
 function RootWrapper() {
   const setScriptRoute = useRef(false);
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (!setScriptRoute.current) {
       // Only inject once
       const script = injectSpeedInsights({
@@ -15,7 +15,7 @@ function RootWrapper() {
       });
       setScriptRoute.current = true;
     }
-  }, []);
+  }, []); */
 
   return (
     <BrowserRouter>
