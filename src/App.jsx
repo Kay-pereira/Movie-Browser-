@@ -4,11 +4,13 @@ import Home from './components/pages/Home';
 import Favorites from './components/pages/Favorites';
 import NavBar from './components/NavBar';
 import { MovieProvider } from './contexts/MovieContexts';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
     <MovieProvider>
       <NavBar />
+      <Analytics />
     <main className="main-content">
       <Routes>
         <Route path="/" element={<Home />} />
