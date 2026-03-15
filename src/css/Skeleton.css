@@ -1,0 +1,37 @@
+.skeleton-pulse {
+    background: linear-gradient(
+        90deg,
+        #1a1a1a 25%,
+        #2a2a2a 50%,
+        #1a1a1a 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 2.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.skeleton-card {
+    pointer-events: none; /* User can't click it */
+}
+
+.skeleton-card .movie-poster {
+    background-color: #1a1a1a;
+    height: 400px; /* Match your MovieCard height */
+    width: 100%;
+}
+
+.skeleton-line {
+    height: 15px;
+    margin-bottom: 10px;
+    background-color: #1a1a1a;
+}
+
+.title-line { width: 80%; height: 20px; }
+.meta-line { width: 40%; }
+.text-line { width: 100%; }
+.text-line.last { width: 60%; }
