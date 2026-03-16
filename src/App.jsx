@@ -12,15 +12,15 @@ function App() {
   return (
     <MovieProvider>
       <NavBar />
-      <Analytics />
-      <SpeedInsights />
-    <main className="main-content">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/movie/:id" element={<MovieDetail />} />
-      </Routes>
-    </main>
+      <main className="main-content">
+        <Analytics />
+        <SpeedInsights />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+        </Routes>
+      </main>
     </MovieProvider>
   );
 }
