@@ -335,6 +335,12 @@
     padding: 20px 40px 80px 40px;
 }
 
+@media (max-width: 600px) {
+    .recommendations-container {
+        padding: 20px 0.75rem 40px 0.75rem;
+    }
+}
+
 .section-divider {
     border: 0;
     height: 1px;
@@ -347,32 +353,84 @@
     margin-bottom: 20px;
 }
 
+.scroll-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .recommendations-scroll {
     display: flex;
     gap: 20px;
     overflow-x: auto;
     padding-bottom: 20px;
-    /* Custom Scrollbar for sleek look */
+    flex: 1;
+    /* Custom Scrollbar for sleek look - auto-hide */
     scrollbar-width: thin;
-    scrollbar-color: #e50914 #1a1a1a;
+    scrollbar-color: transparent transparent;
+    transition: scrollbar-color 0.3s ease;
+}
+
+.recommendations-scroll:hover {
+    scrollbar-color: #e50914 transparent;
 }
 
 .recommendations-scroll::-webkit-scrollbar {
-    height: 8px;
+    height: 6px;
 }
 
 .recommendations-scroll::-webkit-scrollbar-track {
-    background: #1a1a1a;
+    background: transparent;
     border-radius: 10px;
 }
 
 .recommendations-scroll::-webkit-scrollbar-thumb {
-    background: #444;
+    background: transparent;
     border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.recommendations-scroll:hover::-webkit-scrollbar-thumb {
+    background: #e50914;
 }
 
 .recommendations-scroll::-webkit-scrollbar-thumb:hover {
-    background: #e50914;
+    background: #ff0a16;
+}
+
+.scroll-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(229, 9, 20, 0.15);
+    border: 1px solid rgba(229, 9, 20, 0.3);
+    border-radius: 50%;
+    color: #e50914;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.scroll-arrow:hover {
+    background: rgba(229, 9, 20, 0.25);
+    border-color: rgba(229, 9, 20, 0.5);
+    color: #ff0a16;
+}
+
+.scroll-arrow .material-symbols-outlined {
+    font-size: 22px;
+}
+
+.scroll-left {
+    order: -1;
+}
+
+.scroll-right {
+    order: 1;
 }
 
 .rec-card {
@@ -476,12 +534,24 @@
     padding-left: 20px;
     padding-right: 20px;
   }
-  
+
   .detail-poster {
     width: 180px;
   }
-  
+
   .cast-grid {
     grid-template-columns: repeat(auto-fill, minmax(110px, 1px));
+  }
+
+  .scroll-wrapper {
+    gap: 0;
+  }
+
+  .scroll-arrow {
+    display: none;
+  }
+
+  .recommendations-scroll {
+    padding-bottom: 10px;
   }
 }

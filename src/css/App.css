@@ -32,3 +32,9 @@
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
+
+@media (max-width: 600px) {
+  .main-content {
+    padding: 1rem 0.75rem;
+  }
+}
