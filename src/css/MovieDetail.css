@@ -335,6 +335,12 @@
     padding: 20px 40px 80px 40px;
 }
 
+@media (max-width: 600px) {
+    .recommendations-container {
+        padding: 20px 0.75rem 40px 0.75rem;
+    }
+}
+
 .section-divider {
     border: 0;
     height: 1px;
