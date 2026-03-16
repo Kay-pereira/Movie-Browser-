@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import "../css/MovieDetail.css";
 import MovieTrailer from "./TrailerPlayer";
@@ -9,6 +9,17 @@ function MovieDetail() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [showTrailer, setShowTrailer] = useState(false);
+    const scrollContainerRef = useRef(null);
+
+    const scroll = (direction) => {
+        if (scrollContainerRef.current) {
+            const scrollAmount = 400;
+            scrollContainerRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    };
 
     useEffect(() => {
         const fetchFullDetails = async () => {
@@ -165,24 +176,32 @@ function MovieDetail() {
                     <div className="recommendations-container">
                         <hr className="section-divider" />
                         <h2>You Might Also Like</h2>
-                        <div className="recommendations-scroll">
-                            {movie.recommendations.results.slice(0, 10).map((rec) => (
-                                <Link to={`/movie/${rec.id}`} key={rec.id} className="rec-card">
-                                    <div className="rec-poster-wrapper">
-                                        <img
-                                            src={rec.poster_path
-                                                ? `https://image.tmdb.org/t/p/w342${rec.poster_path}`
-                                                : "https://via.placeholder.com/342x513?text=No+Image"}
-                                            alt={rec.title}
-                                        />
-                                        <div className="rec-rating">
-                                            <span className="material-symbols-outlined">star</span>
-                                            {rec.vote_average.toFixed(1)}
+                        <div className="scroll-wrapper">
+                            <button className="scroll-arrow scroll-left" onClick={() => scroll('left')}>
+                                <span className="material-symbols-outlined">chevron_left</span>
+                            </button>
+                            <div className="recommendations-scroll" ref={scrollContainerRef}>
+                                {movie.recommendations.results.slice(0, 10).map((rec) => (
+                                    <Link to={`/movie/${rec.id}`} key={rec.id} className="rec-card">
+                                        <div className="rec-poster-wrapper">
+                                            <img
+                                                src={rec.poster_path
+                                                    ? `https://image.tmdb.org/t/p/w342${rec.poster_path}`
+                                                    : "https://via.placeholder.com/342x513?text=No+Image"}
+                                                alt={rec.title}
+                                            />
+                                            <div className="rec-rating">
+                                                <span className="material-symbols-outlined">star</span>
+                                                {rec.vote_average.toFixed(1)}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <p className="rec-title">{rec.title}</p>
-                                </Link>
-                            ))}
+                                        <p className="rec-title">{rec.title}</p>
+                                    </Link>
+                                ))}
+                            </div>
+                            <button className="scroll-arrow scroll-right" onClick={() => scroll('right')}>
+                                <span className="material-symbols-outlined">chevron_right</span>
+                            </button>
                         </div>
                     </div>
                 )}
