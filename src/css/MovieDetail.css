@@ -537,12 +537,15 @@
     grid-template-columns: repeat(auto-fill, minmax(110px, 1px));
   }
 
-  .scroll-arrow {
-    width: 35px;
-    height: 35px;
+  .scroll-wrapper {
+    gap: 0;
   }
 
-  .scroll-arrow .material-symbols-outlined {
-    font-size: 18px;
+  .scroll-arrow {
+    display: none;
+  }
+
+  .recommendations-scroll {
+    padding-bottom: 10px;
   }
 }
