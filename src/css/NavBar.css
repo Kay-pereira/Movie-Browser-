@@ -2,10 +2,13 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(18, 18, 18, 0.8); /* Dark semi-transparent */
-  backdrop-filter: blur(12px); /* Glass effect */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(18, 18, 18, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0 0 12px 12px;
   padding: 0.75rem 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
 .navbar-container {
@@ -54,16 +57,21 @@
   transition: all 0.3s ease;
   padding: 8px 12px;
   border-radius: 8px;
+  position: relative;
 }
 
 .nav-link:hover {
   color: #fff;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .nav-link.active {
   color: #fff;
-  background: rgba(229, 9, 20, 0.15); /* Subtle red glow */
+  background: rgba(229, 9, 20, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(229, 9, 20, 0.3);
 }
 
 .nav-link.active span {
