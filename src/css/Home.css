@@ -43,9 +43,15 @@
     justify-content: center;
     gap: 12px;
     margin: 20px 0 30px 0;
-    padding: 0 20px;
-    overflow-x: auto; /* For mobile scroll */
+    padding: 15px 20px;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    background: rgba(18, 18, 18, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
 /* Hide scrollbar for Chrome/Safari */
@@ -56,9 +62,9 @@
 .genre-btn {
     padding: 8px 20px;
     border-radius: 20px;
-    background-color: #1a1a1a;
+    background-color: rgba(26, 26, 26, 0.6);
     color: #ccc;
-    border: 1px solid #333;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
@@ -67,14 +73,18 @@
 }
 
 .genre-btn:hover {
-    background-color: #2a2a2a;
-    border-color: #555;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-color: rgba(255, 255, 255, 0.2);
     color: #fff;
 }
 
 .genre-btn.active {
-    background-color: #e50914; /* Your theme red */
-    border-color: #e50914;
+    background-color: rgba(229, 9, 20, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-color: rgba(229, 9, 20, 0.3);
     color: #fff;
     box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
 }
